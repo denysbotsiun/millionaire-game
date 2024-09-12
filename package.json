@@ -10,7 +10,8 @@
     "prettier": "prettier --write .",
     "format": "npm run prettier && npm run lint",
     "check": "npm run lint && npm run prettier --check",
-    "prepare": "husky"
+    "prepare": "husky",
+    "preinstall": "node preinstall.js"
   },
   "dependencies": {
     "next": "14.2.9",

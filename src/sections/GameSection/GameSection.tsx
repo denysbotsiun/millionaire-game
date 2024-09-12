@@ -45,7 +45,12 @@ const GameSection = ({ questions }: Props) => {
             (question) => question.prize === parsedLocalQuestion.prize,
           );
           // if there is question that is got from localstorage - return it as current question
-          return questions[searchedQuestionIndex];
+          if (questions[searchedQuestionIndex]) {
+            return questions[searchedQuestionIndex];
+          } else {
+            localStorage.removeItem("localCurrentQuestion");
+            return questions[0];
+          }
         }
         // if there is no question in existing array - start from the first question
         return questions[0];
